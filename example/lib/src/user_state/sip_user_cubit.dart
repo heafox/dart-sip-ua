@@ -6,7 +6,6 @@ class SipUserCubit extends Cubit<SipUser?> {
   final SIPUAHelper sipHelper;
   SipUserCubit({required this.sipHelper}) : super(null);
 
-
   void register(SipUser user) {
     UaSettings settings = UaSettings();
     settings.port = user.port;
@@ -24,6 +23,11 @@ class SipUserCubit extends Cubit<SipUser?> {
     settings.userAgent = 'Dart SIP Client v1.0.0';
     settings.dtmfMode = DtmfMode.RFC2833;
     settings.contact_uri = 'sip:${user.sipUri}';
+    // settings.registerParams.extraContactUriParams = {
+    //   'pn-provider': 'fcm',
+    //   'pn-param': 'com.mizuvoip.mizudroid.app',
+    //   'pn-prid': ''
+    // };
 
     emit(user);
     sipHelper.start(settings);

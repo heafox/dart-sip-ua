@@ -160,18 +160,22 @@ class _MyDialPadWidget extends State<DialPadWidget>
     ];
 
     return labels
-        .map((row) => Padding(
-            padding: const EdgeInsets.all(12),
+        .map(
+          (row) => Padding(
+            padding: const EdgeInsets.all(8),
             child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: row
-                    .map((label) => ActionButton(
-                          title: label.keys.first,
-                          subTitle: label.values.first,
-                          onPressed: () => _handleNum(label.keys.first),
-                          number: true,
-                        ))
-                    .toList())))
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: row
+                  .map((label) => ActionButton(
+                        title: label.keys.first,
+                        subTitle: label.values.first,
+                        onPressed: () => _handleNum(label.keys.first),
+                        number: true,
+                      ))
+                  .toList(),
+            ),
+          ),
+        )
         .toList();
   }
 

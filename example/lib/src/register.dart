@@ -126,7 +126,7 @@ class _MyRegisterWidget extends State<RegisterWidget>
 
     _saveSettings();
 
-       currentUser.register(SipUser(
+    currentUser.register(SipUser(
         selectedTransport: _selectedTransport,
         wsExtraHeaders: _wsExtraHeaders,
         sipUri: _sipUriController.text,
@@ -323,7 +323,5 @@ class _MyRegisterWidget extends State<RegisterWidget>
   }
 
   @override
-  void onNewReinvite(ReInvite event) {
-    // TODO: implement onNewReinvite
-  }
+  void onNewReinvite(ReInvite event) {}
 }
